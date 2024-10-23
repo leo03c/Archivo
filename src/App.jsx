@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import { useState } from "react";
 
 function App() {
@@ -44,17 +45,7 @@ function App() {
       {/* Header/Nav */}
       <Header></Header>
       {/* Hero Section */}
-      <motion.section
-        className="bg-blue-500 text-white py-20 text-center"
-        initial={{ opacity: 0, y: 500 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1, type: "spring", damping: 10 }}
-      >
-        <h2 className="text-4xl font-bold mb-4">Bienvenido a DeporteShop</h2>
-        <p className="text-lg">
-          Los mejores productos para tu rendimiento deportivo
-        </p>
-      </motion.section>
+      <Hero></Hero>
 
       {/* Productos */}
       <section id="products" className="container mx-auto py-10">
