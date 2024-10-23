@@ -1,53 +1,9 @@
-// import React from 'react';
-import { motion } from "framer-motion";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import { useState } from "react";
+import React from 'react'
+import { motion } from 'framer-motion';
 
-function App() {
-  const products = [
-    {
-      id: 1,
-      name: "Balón de Fútbol",
-      price: "$30.00",
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      name: "Raqueta de Tenis",
-      price: "$120.00",
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 3,
-      name: "Guantes de Boxeo",
-      price: "$45.00",
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 4,
-      name: "Zapatillas de Running",
-      price: "$85.00",
-      image: "https://via.placeholder.com/150",
-    },
-  ];
-  const [comprado, setComptrado] = useState({});
-
-  const toggleComprados = (id) => {
-    setComptrado((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id],
-    }));
-  };
+function Productos() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header/Nav */}
-      <Header></Header>
-      {/* Hero Section */}
-      <Hero></Hero>
-
-      {/* Productos */}
+    <div>
       <section id="products" className="py-16 bg-gray-100">
   <div className="container mx-auto text-center mb-12">
     
@@ -92,20 +48,16 @@ function App() {
             className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
-            onClick={()=> toggleComprados(product.id)}
           >
-            {comprado[product.id] ?  "Añadido" : "Añadir al carrito"}
+            Añadir al carrito
           </motion.button>
         </div>
       </motion.div>
     ))}
   </div>
 </section>
-
-      {/* Footer */}
-      <Footer></Footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Productos
