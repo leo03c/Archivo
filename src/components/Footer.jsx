@@ -1,4 +1,5 @@
 // import React from 'react'
+import icon from "../assets/icons.png"
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
     {/* Logo y Descripción */}
     <div className="col-span-1">
       <div className="flex items-center mb-4">
-        <img src="https://via.placeholder.com/50" alt="DeporteShop Logo" className="w-10 h-10 mr-2" />
+        <img src={icon} alt="DeporteShop Logo" className="w-10 h-10 mr-2" />
         <h2 className="text-2xl font-bold text-white">DeporteShop</h2>
       </div>
       <p>Los mejores productos deportivos para mejorar tu rendimiento y llevar tu pasión por el deporte al siguiente nivel.</p>

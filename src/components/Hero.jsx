@@ -1,12 +1,13 @@
 // import React from 'react'
 import { motion } from 'framer-motion'
+import mI from "../assets/pexels1.jpg";
 
 function Hero() {
   return (
     <div>
       <motion.section
   className="relative bg-cover bg-center h-screen"
-  style={{ backgroundImage: "url('https://via.placeholder.com/1920x1080')" }} // Aquí puedes colocar la URL de la imagen que desees
+  style={{ backgroundImage: `url('${mI}')` }} // Aquí puedes colocar la URL de la imagen que desees
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 1 }}
@@ -51,7 +52,7 @@ function Hero() {
 
 <motion.section
   className="relative bg-cover bg-center h-screen"
-  style={{ backgroundImage: "url('https://via.placeholder.com/1920x1080')" }} // Aquí puedes colocar la URL de la imagen que desees
+  style={{ backgroundImage: "url('../assets/709447')" }} // Aquí puedes colocar la URL de la imagen que desees
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 1 }}

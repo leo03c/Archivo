@@ -1,14 +1,17 @@
 // import React from 'react'
+import icon from "../assets/icons.png"
 import { motion } from 'framer-motion'
 
-function Header() {
+function Header({itens}) {
+console.log(itens)
+
   return (
     <div>
       <header className="bg-white shadow-lg">
   <div className="container mx-auto px-6 py-4 flex justify-between items-center">
     {/* Logo */}
     <div className="flex items-center">
-      <img src="https://via.placeholder.com/50" alt="DeporteShop Logo" className="w-10 h-10 mr-2"/>
+      <img src={icon} alt="DeporteShop Logo" className="w-10 h-10 mr-2"/>
       <h1 className="text-3xl font-bold text-blue-700">DeporteShop</h1>
     </div>
 
@@ -39,7 +42,7 @@ function Header() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h18l-2 14H5L3 3zM10 21h4m-4 0a1 1 0 00-1 1h6a1 1 0 00-1-1" />
         </svg>
       </motion.button>
-      <span className="hidden md:block text-gray-600">0 items</span>
+      <span className="hidden md:block text-gray-600">{itens} items</span>
     </div>
   </div>
 

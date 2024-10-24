@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import { useState } from "react";
+import raq from "./assets/R.jpg";
+import { useState, useEffect } from "react";
+// import { object } from "framer-motion/client";
 
 function App() {
   const products = [
@@ -17,7 +19,7 @@ function App() {
       id: 2,
       name: "Raqueta de Tenis",
       price: "$120.00",
-      image: "https://via.placeholder.com/150",
+      image: `${raq}`,
     },
     {
       id: 3,
@@ -32,7 +34,7 @@ function App() {
       image: "https://via.placeholder.com/150",
     },
   ];
-  const [comprado, setComptrado] = useState({});
+   const [comprado, setComptrado] = useState({});
 
   const toggleComprados = (id) => {
     setComptrado((prevState) => ({
@@ -40,12 +42,32 @@ function App() {
       [id]: !prevState[id],
     }));
   };
+
+  const [itens,setItens] = useState(0)
+
+  useEffect(() => {
+    let nuevoConteo = 0;
+  
+    // Contar cuántos productos están marcados como "comprados"
+    Object.values(comprado).forEach((item) => {
+      if (item) {
+        nuevoConteo++;
+      }
+    });
+  
+    setItens(nuevoConteo); // Actualiza el número de artículos comprados
+  }, [comprado]);
+  
+
+
+
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header/Nav */}
-      <Header></Header>
+      <Header itens={itens} ></Header>
       {/* Hero Section */}
-      <Hero></Hero>
+      <Hero ></Hero>
 
       {/* Productos */}
       <section id="products" className="py-16 bg-gray-100">
@@ -82,8 +104,8 @@ function App() {
       >
         <img
           src={product.image}
-          alt={product.name}
-          className="w-full h-48 object-cover"
+          alt={product.name} 
+          className="w-full h-48  object-contain"
         />
         <div className="p-4">
           <h3 className="text-xl font-semibold mb-2 text-gray-800">{product.name}</h3>
