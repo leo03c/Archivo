@@ -3,7 +3,6 @@ import icon from "../assets/icons.png"
 import { motion } from 'framer-motion'
 
 function Header({itens}) {
-console.log(itens)
 
   return (
     <div>
@@ -39,8 +38,10 @@ console.log(itens)
         className="bg-blue-700 text-white py-2 px-4 rounded-full hover:bg-blue-800 transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h18l-2 14H5L3 3zM10 21h4m-4 0a1 1 0 00-1 1h6a1 1 0 00-1-1" />
-        </svg>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 7l.867-2.598A2 2 0 018.764 3h6.472a2 2 0 011.897 1.402L18 7M5 7h14a2 2 0 012 2v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z" />
+</svg>
+
+
       </motion.button>
       <span className="hidden md:block text-gray-600">{itens} items</span>
     </div>

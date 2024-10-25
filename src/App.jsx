@@ -1,9 +1,14 @@
 // import React from 'react';
 import { motion } from "framer-motion";
 import Header from "./components/Header";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection"; 
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import raq from "./assets/R.jpg";
+import raq from "./assets/pexels5.jpg";
+import balon from "./assets/pexels2.jpg";
+import guantes from "./assets/pexels3.jpg";
+import zapa from "./assets/pexels4.jpg";
 import { useState, useEffect } from "react";
 // import { object } from "framer-motion/client";
 
@@ -13,7 +18,7 @@ function App() {
       id: 1,
       name: "Balón de Fútbol",
       price: "$30.00",
-      image: "https://via.placeholder.com/150",
+      image: `${balon}`,
     },
     {
       id: 2,
@@ -25,13 +30,13 @@ function App() {
       id: 3,
       name: "Guantes de Boxeo",
       price: "$45.00",
-      image: "https://via.placeholder.com/150",
+      image: `${guantes}`,
     },
     {
       id: 4,
       name: "Zapatillas de Running",
       price: "$85.00",
-      image: "https://via.placeholder.com/150",
+      image: `${zapa}`,
     },
   ];
    const [comprado, setComptrado] = useState({});
@@ -84,7 +89,7 @@ function App() {
     </motion.h2>
 
     <motion.p
-      className="text-lg text-gray-600"
+      className="text-lg text-gray-600 px-2"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -94,7 +99,7 @@ function App() {
   </div>
 
   {/* Grid de productos */}
-  <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-2">
     {/* Mapeamos los productos */}
     {products.map((product) => (
       <motion.div
@@ -105,7 +110,7 @@ function App() {
         <img
           src={product.image}
           alt={product.name} 
-          className="w-full h-48  object-contain"
+          className="w-full h-48  object-cover"
         />
         <div className="p-4">
           <h3 className="text-xl font-semibold mb-2 text-gray-800">{product.name}</h3>
@@ -124,6 +129,14 @@ function App() {
   </div>
 </section>
 
+      {/* {AboutSection} */}
+<section >
+  <AboutSection></AboutSection>
+</section>
+
+<section>
+  <ContactSection></ContactSection>
+</section>
       {/* Footer */}
       <Footer></Footer>
     </div>
