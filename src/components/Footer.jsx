@@ -8,29 +8,29 @@ function Footer() {
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
     
     {/* Logo y Descripción */}
-    <div className="col-span-1">
-      <div className="flex items-center mb-4">
+    <div className="col-span-1 ">
+      <div className="flex items-center mb-4 justify-center sm:justify-start">
         <img src={icon} alt="DeporteShop Logo" className="w-10 h-10 mr-2" />
         <h2 className="text-2xl font-bold text-white">DeporteShop</h2>
       </div>
-      <p>Los mejores productos deportivos para mejorar tu rendimiento y llevar tu pasión por el deporte al siguiente nivel.</p>
+      <p className=" text-center sm:text-start">Los mejores productos deportivos para mejorar tu rendimiento y llevar tu pasión por el deporte al siguiente nivel.</p>
     </div>
 
     {/* Enlaces Rápidos */}
-    <div className="col-span-1">
-      <h3 className="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h3>
+    <div className="sm:col-span-1" >
+      <h3 className="text-lg font-semibold text-white mb-4 flex justify-center sm:block">Enlaces Rápidos</h3>
       <ul>
-        <li><a href="#products" className="hover:text-white">Productos</a></li>
-        <li><a href="#about" className="hover:text-white">Sobre Nosotros</a></li>
-        <li><a href="#contact" className="hover:text-white">Contacto</a></li>
-        <li><a href="#faq" className="hover:text-white">FAQ</a></li>
+        <li><a href="#products" className="hover:text-white flex justify-center sm:block">Productos</a></li>
+        <li><a href="#about" className="hover:text-white flex justify-center sm:block">Sobre Nosotros</a></li>
+        <li><a href="#contact" className="hover:text-white flex justify-center sm:block">Contacto</a></li>
+        <li><a href="#faq" className="hover:text-white flex justify-center sm:block">FAQ</a></li>
       </ul>
     </div>
 
     {/* Redes Sociales */}
     <div className="col-span-1">
-      <h3 className="text-lg font-semibold text-white mb-4">Síguenos</h3>
-      <div className="flex space-x-4">
+      <h3 className="text-lg font-semibold text-white mb-4 flex justify-center sm:block">Síguenos</h3>
+      <div className="flex space-x-4 justify-center sm:justify-start">
         <a href="https://facebook.com" className="hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" className="w-6 h-6">
             <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82V14.708H9.692V11.07h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.794.142v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.762v2.311h3.587l-.467 3.637h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.325C24 .593 23.407 0 22.675 0z"/>
@@ -53,7 +53,7 @@ function Footer() {
 
     {/* Información de Contacto */}
     <div className="col-span-1">
-      <h3 className="text-lg font-semibold text-white mb-4">Contáctanos</h3>
+      <h3 className="text-lg font-semibold text-white mb-4 flex justify-center sm:block">Contáctanos</h3>
       <ul>
         <li className="mb-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="inline-block w-5 h-5 mr-2">
@@ -78,7 +78,7 @@ function Footer() {
   </div>
 
   <div className="border-t border-gray-700 mt-8 pt-4">
-    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center sm:text-start">
       <p>© 2024 DeporteShop. Todos los derechos reservados.</p>
       <div className="flex space-x-4 mt-4 md:mt-0">
         <a href="#privacy" className="hover:text-white">Política de Privacidad</a>

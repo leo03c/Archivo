@@ -20,16 +20,16 @@ const AboutSection = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-lg text-gray-900 mb-8"
+          className="text-lg text-gray-900 mb-8 font-sans font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          En <span className="font-semibold text-blue-600">DeporteShop</span>, nuestra misión es proporcionar productos de la más alta calidad para todos los entusiastas del deporte. Con una amplia gama de artículos deportivos, desde equipamiento hasta accesorios, estamos comprometidos a ayudar a nuestros clientes a alcanzar su máximo potencial.
+          En <span className="font-semibold text-blue-700">DeporteShop</span>, nuestra misión es proporcionar productos de la más alta calidad para todos los entusiastas del deporte. Con una amplia gama de artículos deportivos, desde equipamiento hasta accesorios, estamos comprometidos a ayudar a nuestros clientes a alcanzar su máximo potencial.
         </motion.p>
 
         <motion.p 
-          className="text-lg text-gray-900 mb-8"
+          className="text-lg text-gray-900 mb-8 font-sans font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -38,7 +38,7 @@ const AboutSection = () => {
         </motion.p>
 
         <motion.p 
-          className="text-lg text-gray-900 mb-8"
+          className="text-lg text-gray-900 mb-8 font-sans font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -47,12 +47,12 @@ const AboutSection = () => {
         </motion.p>
 
         <motion.p 
-          className="text-lg text-gray-900"
+          className="text-lg text-gray-900 font-sans font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Gracias por elegir <span className="font-semibold text-blue-600">DeporteShop</span>. ¡Esperamos acompañarte en tu viaje deportivo!
+          Gracias por elegir <span className="font-semibold text-blue-700">DeporteShop</span>. ¡Esperamos acompañarte en tu viaje deportivo!
         </motion.p>
       </div>
     </section>
