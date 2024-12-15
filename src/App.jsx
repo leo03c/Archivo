@@ -1,142 +1,31 @@
 // import React from 'react';
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Header from "./components/Header";
+import Services from "./components/Services";
+import FeaturedProducts from "./components/FeaturedProducts";
 import AboutSection from "./components/AboutSection";
-import ContactSection from "./components/ContactSection"; 
+import Testimonials from "./components/Testimonials";
+import CTA from "./components/CTA";
+// import ContactSection from "./components/ContactSection"; 
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import raq from "./assets/pexels5.jpg";
-import balon from "./assets/pexels2.jpg";
-import guantes from "./assets/pexels3.jpg";
-import zapa from "./assets/pexels4.jpg";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // import { object } from "framer-motion/client";
 
 function App() {
-  const products = [
-    {
-      id: 1,
-      name: "Balón de Fútbol",
-      price: "$30.00",
-      image: `${balon}`,
-    },
-    {
-      id: 2,
-      name: "Raqueta de Tenis",
-      price: "$120.00",
-      image: `${raq}`,
-    },
-    {
-      id: 3,
-      name: "Guantes de Boxeo",
-      price: "$45.00",
-      image: `${guantes}`,
-    },
-    {
-      id: 4,
-      name: "Zapatillas de Running",
-      price: "$85.00",
-      image: `${zapa}`,
-    },
-  ];
-   const [comprado, setComptrado] = useState({});
-
-  const toggleComprados = (id) => {
-    setComptrado((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id],
-    }));
-  };
-
-  const [itens,setItens] = useState(0)
-
-  useEffect(() => {
-    let nuevoConteo = 0;
   
-    // Contar cuántos productos están marcados como "comprados"
-    Object.values(comprado).forEach((item) => {
-      if (item) {
-        nuevoConteo++;
-      }
-    });
-  
-    setItens(nuevoConteo); // Actualiza el número de artículos comprados
-  }, [comprado]);
-  
-
-
-
-
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header/Nav */}
-      <Header itens={itens} ></Header>
+    <div>
+      {/* Header Section */}
+      <Header ></Header>
       {/* Hero Section */}
       <Hero ></Hero>
-
-      {/* Productos */}
-      <section id="products" className="py-16 bg-gray-100">
-  <div className="container mx-auto text-center mb-12">
-    
-    {/* Título de la sección */}
-    <motion.h2
-      className="text-4xl font-bold mb-4 text-gray-800"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-    >
-      Productos Destacados
-    </motion.h2>
-
-    <motion.p
-      className="text-lg text-gray-600 px-2"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-    >
-      Descubre nuestra selección de artículos deportivos de alta calidad
-    </motion.p>
-  </div>
-
-  {/* Grid de productos */}
-  <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-2">
-    {/* Mapeamos los productos */}
-    {products.map((product) => (
-      <motion.div
-        key={product.id}
-        className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
-        whileHover={{ scale: 1.05 }}
-      >
-        <img
-          src={product.image}
-          alt={product.name} 
-          className="w-full h-48  object-cover"
-        />
-        <div className="p-4">
-          <h3 className="text-xl font-semibold mb-2 text-gray-800">{product.name}</h3>
-          <p className="text-gray-600 mb-4">{product.price}</p>
-          <motion.button
-            className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3 }}
-            onClick={()=> toggleComprados(product.id)}
-          >
-            {comprado[product.id] ?  "Añadido" : "Añadir al carrito"}
-          </motion.button>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
-      {/* {AboutSection} */}
-<section >
-  <AboutSection></AboutSection>
-</section>
-
-<section>
-  <ContactSection></ContactSection>
-</section>
+      {/* Services Section */}
+      <Services></Services>
+      <FeaturedProducts></FeaturedProducts>
+      <AboutSection></AboutSection>
+      <Testimonials></Testimonials>
+      <CTA></CTA>
       {/* Footer */}
       <Footer></Footer>
     </div>
