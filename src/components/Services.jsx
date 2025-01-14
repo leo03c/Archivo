@@ -1,9 +1,10 @@
-import imgBrab from "../assets/barberia.jpg"
-import imgPelu from "../assets/peluqueria.jpg"
-import imgMani from "../assets/manicura.jpg"
-import imgPedi from "../assets/pedicura.jpg"
-import { useState } from "react"
+import imgBrab from "../assets/barberia.jpg";
+import imgPelu from "../assets/peluqueria.jpg";
+import imgMani from "../assets/manicura.jpg";
+import imgPedi from "../assets/pedicura.jpg";
+import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,23 +53,25 @@ const Services = () => {
           Nuestros Servicios
         </h2>
         <div className="relative">
-          {/* Carrusel de imágenes */}
+          {/* Carrusel de imágenes con animaciones */}
           <div className="overflow-hidden rounded-lg shadow-lg">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${currentSlide * 100}%)`,
-              }}
+            <motion.div
+              className="flex"
+              animate={{ x: -currentSlide * 100 + "%" }}
+              transition={{ type: "tween", duration: 0.5 }}
             >
               {services.map((service, index) => (
                 <div
                   key={index}
                   className="w-full flex-shrink-0"
                 >
-                  <img
+                  <motion.img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-96 object-cover rounded-lg"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
                   />
                   <div className="p-6">
                     <h3 className="text-2xl font-serif font-semibold text-mustard mb-4">
@@ -86,19 +89,25 @@ const Services = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Botones de Navegación */}
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4">
-          <button onClick={prevSlide} className="bg-mustard text-jetBlack p-2 rounded-full shadow-lg    hover:bg-bronze transition-all duration-300">
-            <FaChevronLeft className="text-xl" />
-          </button>
+            <button
+              onClick={prevSlide}
+              className="bg-mustard text-jetBlack p-2 rounded-full shadow-lg hover:bg-bronze transition-all duration-300"
+            >
+              <FaChevronLeft className="text-xl" />
+            </button>
           </div>
           <div className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4">
-          <button onClick={nextSlide} className="bg-mustard text-jetBlack p-2 rounded-full shadow-lg hover:bg-bronze transition-all duration-300">
-            <FaChevronRight className="text-xl" />
-          </button>
+            <button
+              onClick={nextSlide}
+              className="bg-mustard text-jetBlack p-2 rounded-full shadow-lg hover:bg-bronze transition-all duration-300"
+            >
+              <FaChevronRight className="text-xl" />
+            </button>
           </div>
         </div>
       </div>

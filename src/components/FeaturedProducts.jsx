@@ -3,6 +3,7 @@ import imgProducto1 from "../assets/producto1.jpg";
 import imgProducto2 from "../assets/producto2.jpg";
 import imgProducto3 from "../assets/producto3.jpg";
 import imgProducto4 from "../assets/producto4.jpg";
+import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
   const products = [
@@ -60,12 +61,12 @@ const FeaturedProducts = () => {
           ))}
         </div>
         <div className="mt-8">
-          <a
+          <Link to="./compra/"
             href="#"
             className="text-mustard font-semibold hover:text-jetBlack hover:underline transition-all duration-300"
           >
             Ver más productos
-          </a>
+          </Link>
         </div>
       </div>
     </section>

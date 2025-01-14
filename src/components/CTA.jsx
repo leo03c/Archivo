@@ -1,4 +1,5 @@
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -11,13 +12,13 @@ const CTA = () => {
           Descubre la experiencia exclusiva de nuestros servicios y lleva tu look al siguiente nivel. 
           ¡Reserva ahora y disfruta de un trato VIP!
         </p>
-        <a
+        <Link to="./reserva/"
           href="#contacto"
           className="inline-flex items-center bg-mustard text-jetBlack px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-bronze hover:text-lightGray"
         >
           Reservar Ahora
           <FaArrowRight className="ml-2" />
-        </a>
+        </Link>
       </div>
     </section>
   );

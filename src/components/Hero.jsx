@@ -1,4 +1,5 @@
 import imgHero from "../assets/hero.jpg"
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -23,12 +24,10 @@ const Hero = () => {
           belleza.
         </p>
         <div className="flex space-x-6">
-          <a
-            href="#servicios"
-            className="bg-mustard text-jetBlack px-8 py-3 rounded-full font-semibold shadow-md hover:bg-bronze transition-all duration-300"
-          >
+          <Link to= "./reserva" className="bg-mustard text-jetBlack px-8 py-3 rounded-full font-semibold shadow-md hover:bg-bronze transition-all duration-300">
+           
             Reserva una Cita
-          </a>
+          </Link>
           <a
             href="#productos"
             className="border-2 border-mustard text-mustard px-8 py-3 rounded-full font-semibold hover:bg-mustard hover:text-jetBlack transition-all duration-300"
